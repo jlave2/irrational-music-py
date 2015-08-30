@@ -33,14 +33,14 @@ def getParams():
     global key, octave, scale
     key = input('Choose a key (use # or b): ')
     octave = input('Choose an octave (0-8): ')
-    scale = input('Choose a scale (M/m): ')
+    scale = input('Choose a scale (maj/min): ')
 
 def playMusic():
     getParams()
-    if scale == 'major':
+    if scale == 'maj':
         toneInds = majorIntervals([allFreqs.index(i) for i in allFreqs \
                    if key + octave in i[0]][0])
-    if scale == 'minor':
+    if scale == 'min':
         toneInds = minorIntervals([allFreqs.index(i) for i in allFreqs \
                    if key + octave in i[0]][0])
     else:
